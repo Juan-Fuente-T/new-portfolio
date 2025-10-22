@@ -66,7 +66,7 @@ export default function Header() {
           asChild 
           onClick={() => setOpen(false)}
           className={cn(
-            isScrolled ? 'text-foreground' : 'hover:bg-white/10 text-white',
+            // isScrolled ? 'text-foreground' : 'hover:bg-white/10 text-white',
             activeSection === link.href && (isScrolled ? 'bg-accent text-accent-foreground' : 'bg-white/10')
           )}
         >

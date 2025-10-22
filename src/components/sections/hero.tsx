@@ -7,12 +7,11 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative h-[80vh] min-h-[500px] w-full flex items-center justify-center text-center text-white">
       <Image
-        src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Código en un monitor"
+        src="https://images.unsplash.com/photo-1620287341056-49a2f1ab2fdc?q=80&w=2070&auto=format&fit=crop"
+        alt="Fondo abstracto de cubos tecnológicos"
         fill
-        className="object-cover  opacity-40"
-        // className="object-cover"
-        data-ai-hint="programming code"
+        className="object-cover opacity-40"
+        data-ai-hint="abstract cubes"
         priority
       />
       <div className="absolute inset-0 bg-black/60" />
