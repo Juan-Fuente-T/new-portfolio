@@ -7,10 +7,10 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative h-[80vh] min-h-[500px] w-full flex items-center justify-center text-center text-white">
       <Image
-        src="/hero-background.webp"
+        src="/images/hero-background.jpg"
         alt="Fondo abstracto de cubos tecnológicos"
         fill
-        className="object-cover opacity-40"
+        className="object-cover opacity-30"
         data-ai-hint="abstract cubes"
         priority
       />
@@ -27,14 +27,14 @@ export default function HeroSection() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           {profile.links.map((link) => (
-            <Button key={link.name} variant="outline" asChild className="border-white text-white hover:bg-white/10 hover:text-white">
+            <Button key={link.name} variant="outline-dark" asChild>
               <a href={link.url} target="_blank" rel="noopener noreferrer">
                 <link.icon className="mr-2 h-4 w-4" />
                 {link.name}
               </a>
             </Button>
           ))}
-           <Button variant="outline" asChild className="border-white text-white hover:bg-white/10 hover:text-white">
+           <Button variant="outline-dark" asChild>
               <a href={`mailto:${profile.email}`}>
                 <Mail className="mr-2 h-4 w-4" />
                 Email
