@@ -11,6 +11,7 @@ export default function HeroSection() {
         alt="Código en un monitor"
         fill
         className="object-cover  opacity-40"
+        // className="object-cover"
         data-ai-hint="programming code"
         priority
       />

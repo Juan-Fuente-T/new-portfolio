@@ -24,23 +24,35 @@ export default function Header() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
-      const sections = navLinks.map(link => document.querySelector(link.href));
+      setIsScrolled(scrollPosition > 10);
+
+      // Check if scrolled to the bottom of the page
+      if (windowHeight + scrollPosition >= documentHeight - 10) {
+        setActiveSection('#contact');
+        return;
+      }
+
       let currentSection = '';
-
-      sections.forEach(section => {
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.href) as HTMLElement | null;
         if (section) {
           const sectionTop = section.offsetTop;
-          if (window.scrollY >= sectionTop - 100) {
-            currentSection = `#${section.id}`;
+          if (scrollPosition >= sectionTop - 100) {
+            currentSection = link.href;
           }
         }
       });
       setActiveSection(currentSection);
     };
 
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run on mount to set initial state
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -61,9 +73,9 @@ export default function Header() {
           <Link href={link.href}>{link.label}</Link>
         </Button>
       ))}
-      <Button asChild className={cn(isScrolled ? '' : 'bg-white text-background hover:bg-white/90')}>
+      {/* <Button asChild className={cn(isScrolled ? '' : 'bg-white text-background hover:bg-white/90')}>
         <a href={`mailto:${profile.email}`}>Hablemos</a>
-      </Button>
+      </Button> */}
     </>
   );
 
@@ -99,9 +111,9 @@ export default function Header() {
                       <Link href={link.href}>{link.label}</Link>
                     </Button>
                   ))}
-                  <Button asChild>
+                  {/* <Button asChild>
                     <a href={`mailto:${profile.email}`}>Hablemos</a>
-                  </Button>
+                  </Button> */}
                 </nav>
               </SheetContent>
             </Sheet>
@@ -120,9 +132,9 @@ export default function Header() {
                   <Link href={link.href}>{link.label}</Link>
                 </Button>
               ))}
-              <Button asChild className={cn(isScrolled ? '' : 'bg-white text-background hover:bg-white/90')}>
+              {/* <Button asChild className={cn(isScrolled ? '' : 'bg-white text-background hover:bg-white/90')}>
                 <a href={`mailto:${profile.email}`}>Hablemos</a>
-              </Button>
+              </Button> */}
             </nav>
           )}
         </div>
