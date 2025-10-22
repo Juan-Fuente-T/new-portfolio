@@ -22,7 +22,7 @@ export default function HeroSection() {
         <p className="mt-4 text-lg font-medium text-primary-foreground/90 sm:text-xl lg:text-2xl">
           {profile.title}
         </p>
-        <p className="mt-6 mx-auto max-w-2xl text-base text-primary-foreground/80 sm:text-lg">
+        <p className="mt-6 mx-auto max-w-3xl text-base text-primary-foreground/80 sm:text-lg">
           {profile.bio}
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
