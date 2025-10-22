@@ -1,29 +1,30 @@
 import type { LucideIcon } from 'lucide-react';
-import { Github, Linkedin, Mail, PlayCircle, ExternalLink, Code, Eye } from 'lucide-react';
+import { Github, Linkedin, Mail, House, PlayCircle, ExternalLink, Code, Eye } from 'lucide-react';
 
 export const profile = {
   name: "Juan Fuente",
-  title: "Full-Stack Developer | Java & Blockchain Specialist",
-  bio: "Desarrollo soluciones robustas y escalables desde el concepto hasta la producción. Especializado en arquitecturas backend con Spring Boot y aplicaciones descentralizadas en Ethereum. Mi enfoque combina rigor técnico con pragmatismo: cada línea de código resuelve un problema real.",
+  title: "Full-Stack Developer | Java - React & Blockchain Specialist",
+  bio: "Desarrollo soluciones robustas y escalables desde el concepto hasta la producción. Especializado en arquitecturas backend con Spring Boot, frontend con React y aplicaciones descentralizadas en Ethereum. Mi enfoque combina rigor técnico con pragmatismo: cada línea de código resuelve un problema real.",
   email: "jfuentet@gmail.com",
   links: [
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/juan-fuente-talavera/", icon: Linkedin },
-    { name: "GitHub", url: "https://github.com/juanfuente", icon: Github },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/juan-fuente-dev/", icon: Linkedin},
+    { name: "GitHub", url: "https://github.com/Juan-Fuente-T", icon: Github },
+    { name: "Web", url: "https://juanfuente.ovh", icon: House },
   ],
 };
 
 export const skills = [
   {
     category: "Backend",
-    technologies: ["Java 21", "Spring Boot", "Spring Security", "Spring Data JPA", "Hibernate", "Groovy"],
+    technologies: ["Java", "Spring Boot", "Spring Security", "Spring Data JPA", "Maven", "Hibernate", "Groovy"],
   },
   {
     category: "Frontend",
-    technologies: ["React", "Svelte", "TypeScript", "JavaScript", "HTML5", "CSS3", "TailwindCSS", "Shadcn UI"],
+    technologies: ["React", "Angular", "Svelte", "TypeScript", "JavaScript", "HTML5", "CSS3", "TailwindCSS", "Shadcn UI"],
   },
   {
     category: "Blockchain",
-    technologies: ["Solidity", "Hardhat", "Ethers.js", "UUPS Proxy Pattern", "IPFS"],
+    technologies: ["Solidity", "Foundry", "Hardhat", "Ethers.js", "Viem", "Wagmi", "RainbowKit", "UUPS Proxy Pattern", "IPFS"],
   },
   {
     category: "Bases de Datos",
@@ -31,7 +32,7 @@ export const skills = [
   },
   {
     category: "Infraestructura & DevOps",
-    technologies: ["Docker", "Docker Compose", "Git", "AWS", "RunCloud", "Netlify", "Vercel", "Nginx", "LiteSpeed"],
+    technologies: ["Docker", "Docker Compose", "Git", "RunCloud", "Netlify", "Vercel", "Render", "Hetzner", "LiteSpeed"],
   },
   {
     category: "Testing & Quality",
@@ -66,12 +67,13 @@ export const projects: Project[] = [
       "Endpoints avanzados: búsqueda multi-campo, paginación, ordenación, y proxy de PDFs.",
       "Manejo centralizado de errores con GlobalExceptionHandler.",
       "Interfaz Svelte 5 con dashboard en tiempo real y visor integrado de PDF.",
+      "Pruebas -> User: processor Password: borme-processor"
     ],
-    technologies: ["Java", "Spring Boot", "Groovy", "PostgreSQL/H2", "Svelte 5", "TypeScript", "Docker", "RunCloud", "Netlify", "Jsoup", "Flyway"],
+    technologies: ["Java 17", "Spring Boot", "Groovy", "PostgreSQL/H2", "Svelte 5", "TypeScript", "Docker", "RunCloud", "Netlify", "Jsoup", "Flyway"],
     status: { text: "Operacional en producción", emoji: '✅' },
     links: [
-      { label: "Demo en vivo", url: "https://borme-data.juanfuente.dev/" },
-      { label: "Ver código", url: "https://github.com/juanfuente/borme-data-extractor" },
+      { label: "Demo en vivo", url: "https://borme-scraper.netlify.app/" },
+      { label: "Ver código", url: "https://github.com/Juan-Fuente-T/borme-scraper-backend" }
     ],
   },
   {
@@ -89,8 +91,9 @@ export const projects: Project[] = [
     technologies: ["Java 21", "Spring Boot 3.x", "Spring Security 6.x", "PostgreSQL (Supabase)", "React", "TypeScript", "Vite", "TailwindCSS", "Shadcn UI", "Render", "Vercel"],
     status: { text: "Desplegado", emoji: '✅' },
     links: [
-      { label: "Demo en vivo", url: "https://foody-market.vercel.app/" },
-      { label: "Ver código", url: "https://github.com/juanfuente/foody-market-monorepo" },
+      { label: "Ver en portafolio", url: "https://juanfuente.ovh" },
+      { label: "Demo en vivo", url: "https://juanfuente.ovh/foody_market/" },
+      { label: "Ver código", url: "https://github.com/Juan-Fuente-T/foodymarket" },
     ],
   },
   {
@@ -108,8 +111,9 @@ export const projects: Project[] = [
     technologies: ["Solidity", "Foundry", "React", "TypeScript", "Wagmi", "RainbowKit", "Ethers.js", "Viem", "Sepolia Testnet"],
     status: { text: "Desplegado y funcional", emoji: '✅' },
     links: [
-      { label: "Probar en vivo", url: "https://money-bank-escrow-dapp.vercel.app/" },
-      { label: "Ver código", url: "https://github.com/juanfuente/money-bank-escrow" },
+      { label: "Ver en portafolio", url: "https://juanfuente.ovh" },
+      { label: "Demo en vivo", url: "https://juanfuente.ovh/money_bank/" },
+      { label: "Ver código", url: "https://github.com/Juan-Fuente-T/money_bank_escrow" },
     ],
   },
   {
@@ -125,10 +129,11 @@ export const projects: Project[] = [
       "Gestión de permisos: solo propietarios pueden modificar precios o retirar del mercado.",
     ],
     technologies: ["Solidity", "Hardhat", "Foundry", "Ethers.js", "React", "JavaScript", "TailwindCSS", "IPFS", "Sepolia Testnet"],
-    status: { text: "Funcional", emoji: '✅' },
+    status: { text: "Desplegado y funcional", emoji: '✅' },
     links: [
-      { label: "Ver en portafolio", url: "#" },
-      { label: "Ver código", url: "https://github.com/juanfuente/gardentech-marketplace-dapp" },
+      { label: "Ver en portafolio", url: "https://juanfuente.ovh/proyectos/" },
+      { label: "Demo en vivo", url: "https://juanfuente.ovh/gardentech_marketplace/" },
+      { label: "Ver código", url: "https://github.com/Juan-Fuente-T/Garden_Tech_Markeplace" },
     ],
   },
   {
@@ -145,14 +150,15 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "TailwindCSS", "RainbowKit", "Wagmi", "Ethers.js", "Viem", "Solidity", "Foundry", "IPFS", "Arbitrum Testnet"],
     status: { text: "Prototipo desplegado", emoji: '🟡' },
     links: [
-      { label: "Ver código", url: "https://github.com/juanfuente/business-card-mvp" },
+      { label: "Ver en portafolio", url: "https://juanfuente.ovh" },
+      { label: "Ver código", url: "https://github.com/Juan-Fuente-T/BusinessCard_MVP_Frontend_rainbow-kit" },
     ],
   },
 ];
 
 export const philosophy = {
   title: "Filosofía de Desarrollo",
-  intro: "No escribo código por escribir. Cada proyecto nace de un problema específico: desde automatizar el procesamiento de datos públicos hasta crear marketplaces funcionales o explorar las posibilidades de blockchain.",
+  intro: "Me importa resolver problemas concretos con entregas verificables. Entiendo qué necesita resolverse, elijo herramientas adecuadas, y entrego algo que resiste el uso real. Cada proyecto nace de un problema específico: Desde extracción de datos hasta crear marketplaces funcionales o explorar las posibilidades de blockchain",
   methodology: [
     { title: "Especificación clara antes de implementación", description: "Entiendo el problema antes de codificar." },
     { title: "Arquitectura escalable", description: "Código organizado que soporta cambios futuros." },
@@ -167,9 +173,9 @@ export const contact = {
   intro: "¿Proyecto interesante? Estoy disponible para:",
   services: [
     "Desarrollos backend robustos con Spring Boot",
-    "Aplicaciones full-stack (Java + React/Svelte)",
+    "Aplicaciones full-stack (Java + React)",
     "Smart contracts y DApps en Ethereum",
-    "Consultoría técnica y arquitectura de sistemas",
+    "Cualquier proyecto que requiera construcción seria",
   ],
   outro: "Conecta conmigo en LinkedIn, explora mi GitHub, o escríbeme a",
 };
