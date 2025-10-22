@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative h-[80vh] min-h-[500px] w-full flex items-center justify-center text-center text-white">
       <Image
-        src="/hero-background.jpg"
+        src="/hero-background.webp"
         alt="Fondo abstracto de cubos tecnológicos"
         fill
         className="object-cover opacity-40"

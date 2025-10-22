@@ -49,13 +49,11 @@ export default function Header() {
       setActiveSection(currentSection);
     };
 
-
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Run on mount to set initial state
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
 
   const NavContent = () => (
     <>
@@ -66,8 +64,8 @@ export default function Header() {
           asChild 
           onClick={() => setOpen(false)}
           className={cn(
-            isScrolled ? 'text-foreground' : 'hover:bg-white/10 text-white hover:text-white',
-            activeSection === link.href && (isScrolled ? 'bg-accent text-accent-foreground' : 'bg-white/10')
+            'text-foreground',
+            activeSection === link.href && 'bg-accent text-accent-foreground'
           )}
         >
           <Link href={link.href}>{link.label}</Link>
@@ -83,14 +81,14 @@ export default function Header() {
     )}>
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <CodeXml className={cn("h-6 w-6", isScrolled ? 'text-primary' : 'text-white')} />
-          <span className={cn("font-bold font-headline", isScrolled ? 'text-foreground' : 'text-white')}>{profile.name}</span>
+          <CodeXml className="h-6 w-6 text-primary" />
+          <span className="font-bold font-headline text-foreground">{profile.name}</span>
         </Link>
         <div className="flex flex-1 items-center justify-end space-x-2">
           {isMobile ? (
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className={cn(isScrolled ? '' : 'text-white border-white hover:bg-white/10 hover:text-white')}>
+                <Button variant="outline" size="icon" className="text-foreground border-border hover:bg-accent hover:text-accent-foreground">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open menu</span>
                 </Button>
