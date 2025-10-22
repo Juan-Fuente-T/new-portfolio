@@ -66,16 +66,13 @@ export default function Header() {
           asChild 
           onClick={() => setOpen(false)}
           className={cn(
-            isScrolled ? '' : 'hover:bg-white/10 text-white',
+            isScrolled ? 'text-foreground' : 'hover:bg-white/10 text-white',
             activeSection === link.href && (isScrolled ? 'bg-accent text-accent-foreground' : 'bg-white/10')
           )}
         >
           <Link href={link.href}>{link.label}</Link>
         </Button>
       ))}
-      {/* <Button asChild className={cn(isScrolled ? '' : 'bg-white text-background hover:bg-white/90')}>
-        <a href={`mailto:${profile.email}`}>Hablemos</a>
-      </Button> */}
     </>
   );
 
@@ -93,7 +90,7 @@ export default function Header() {
           {isMobile ? (
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className={cn(isScrolled ? '' : 'text-white border-white hover:bg-white/10')}>
+                <Button variant="outline" size="icon" className={cn(isScrolled ? '' : 'text-white border-white hover:bg-white/10 hover:text-white')}>
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open menu</span>
                 </Button>
@@ -111,9 +108,6 @@ export default function Header() {
                       <Link href={link.href}>{link.label}</Link>
                     </Button>
                   ))}
-                  {/* <Button asChild>
-                    <a href={`mailto:${profile.email}`}>Hablemos</a>
-                  </Button> */}
                 </nav>
               </SheetContent>
             </Sheet>
@@ -125,16 +119,13 @@ export default function Header() {
                   variant="ghost" 
                   asChild
                   className={cn(
-                    isScrolled ? '' : 'hover:bg-white/10 text-white',
+                    isScrolled ? 'text-foreground' : 'hover:bg-white/10 text-white hover:text-white',
                     activeSection === link.href && (isScrolled ? 'bg-accent text-accent-foreground' : 'bg-white/10')
                   )}
                 >
                   <Link href={link.href}>{link.label}</Link>
                 </Button>
               ))}
-              {/* <Button asChild className={cn(isScrolled ? '' : 'bg-white text-background hover:bg-white/90')}>
-                <a href={`mailto:${profile.email}`}>Hablemos</a>
-              </Button> */}
             </nav>
           )}
         </div>
