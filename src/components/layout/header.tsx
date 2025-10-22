@@ -18,6 +18,16 @@ const navLinks = [
 export default function Header() {
   const isMobile = useIsMobile();
   const [open, setOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   const NavContent = () => (
     <>
@@ -33,17 +43,17 @@ export default function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className={`sticky top-0 z-50 w-full transition-colors duration-300 ${isScrolled ? 'border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : 'bg-transparent'}`}>
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <CodeXml className="h-6 w-6 text-primary" />
-          <span className="font-bold font-headline">{profile.name}</span>
+          <CodeXml className={`h-6 w-6 ${isScrolled ? 'text-primary' : 'text-primary-foreground'}`} />
+          <span className={`font-bold font-headline ${isScrolled ? 'text-primary-foreground' : 'text-primary-foreground'}`}>{profile.name}</span>
         </Link>
         <div className="flex flex-1 items-center justify-end space-x-2">
           {isMobile ? (
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className={`${isScrolled ? '' : 'text-white border-white hover:bg-white/10'}`}>
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open menu</span>
                 </Button>
@@ -55,8 +65,15 @@ export default function Header() {
               </SheetContent>
             </Sheet>
           ) : (
-            <nav className="flex items-center space-x-2">
-              <NavContent />
+             <nav className={`flex items-center space-x-2 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
+              {navLinks.map((link) => (
+                <Button key={link.href} variant="ghost" asChild className={`${isScrolled ? '' : 'hover:bg-white/10'}`}>
+                  <Link href={link.href}>{link.label}</Link>
+                </Button>
+              ))}
+              <Button asChild className={`${isScrolled ? '' : 'bg-primary-foreground text-background hover:bg-primary-foreground/90'}`}>
+                <a href={`mailto:${profile.email}`}>Hablemos</a>
+              </Button>
             </nav>
           )}
         </div>
