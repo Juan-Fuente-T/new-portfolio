@@ -66,7 +66,7 @@ export default function Header() {
           asChild 
           onClick={() => setOpen(false)}
           className={cn(
-            // isScrolled ? 'text-foreground' : 'hover:bg-white/10 text-white',
+            isScrolled ? 'text-foreground' : 'hover:bg-white/10 text-white hover:text-white',
             activeSection === link.href && (isScrolled ? 'bg-accent text-accent-foreground' : 'bg-white/10')
           )}
         >
@@ -113,19 +113,7 @@ export default function Header() {
             </Sheet>
           ) : (
              <nav className="flex items-center space-x-2">
-              {navLinks.map((link) => (
-                <Button 
-                  key={link.href} 
-                  variant="ghost" 
-                  asChild
-                  className={cn(
-                    isScrolled ? 'text-foreground' : 'hover:bg-white/10 text-white hover:text-white',
-                    activeSection === link.href && (isScrolled ? 'bg-accent text-accent-foreground' : 'bg-white/10')
-                  )}
-                >
-                  <Link href={link.href}>{link.label}</Link>
-                </Button>
-              ))}
+              <NavContent/>
             </nav>
           )}
         </div>
